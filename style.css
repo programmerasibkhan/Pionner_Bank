@@ -1,0 +1,36 @@
+body{
+    padding: 100px;
+	font-weight: 900;
+}
+
+.submit-area {
+	box-shadow: 0px 0px 20px #000;
+	padding: 50px;
+	border-radius: 10px;
+	margin-top: 50px;
+}
+
+#transaction-area{
+	display: none;
+}
+
+
+.deposit{
+	background: slateblue;
+}
+.withwraw{
+	background: lightsalmon;
+}
+.blance{
+	background: orange;
+}
+
+
+
+
+.status{
+	margin: 0 20px;
+	padding: 20px;
+	color: #fff;
+	border-radius: 10px;
+}
