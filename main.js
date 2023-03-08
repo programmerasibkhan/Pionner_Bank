@@ -1,3 +1,5 @@
+// login-btn event hendler
+
 const loginBtn = document.getElementById('login')
 loginBtn.addEventListener('click', function(){
     const loginArea = document.getElementById('login-area')
@@ -6,9 +8,10 @@ loginBtn.addEventListener('click', function(){
     transitionArea.style.display = 'block'
 })
 
+// deposit-btn event hendler
+
 const depositBtn = document.getElementById("addDeposit")
 depositBtn.addEventListener('click', function(){
-
     const depositNumber = getInputNumber("depositAmount")
 
     updateSpanText("currentDeposit", depositNumber)
@@ -17,15 +20,17 @@ depositBtn.addEventListener('click', function(){
     document.getElementById("depositAmount").value = "";
 })
 
+// withwraw-btn event hendler
 
 const withwrawBtn = document.getElementById("addWithwraw")
 withwrawBtn.addEventListener("click", function(){
-
     const withdrawNumber = getInputNumber("withwrawAmount")
-    console.log(withdrawNumber)
+
+    updateSpanText("currentWithwraw", withdrawNumber)
+    updateSpanText("currentBlance", -1 * withdrawNumber)
+    
+    document.getElementById("withwrawAmount").value = "";
 })
-
-
 
 
 
@@ -38,9 +43,9 @@ function getInputNumber(id){
 }
 
 
-function updateSpanText(id, depositNumber){
+function updateSpanText(id, addedNumber){
     const current = document.getElementById(id).innerText;
     const currentNumber = parseFloat(current)
-    const totalAmount = depositNumber + currentNumber
+    const totalAmount = addedNumber + currentNumber
     document.getElementById(id).innerText = totalAmount 
 }
